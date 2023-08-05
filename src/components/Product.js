@@ -1,12 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-import { formatCurrencyString } from "use-shopping-cart";
+import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
+import { toast } from "react-hot-toast";
 
 export default function Product({ product, index }) {
+  const { addItem } = useShoppingCart();
+
+  function addItemToCart(event) {
+    event.preventDefault();
+    const id = toast.loading("Added item...");
+    addItem(product);
+    toast.success(`${product.name} added!`, { id });
+  }
+
   return (
     <Link
       href={`/products/${product.id}`}
-      className="border-2 rounded-sm group overflow-hidden"
+      className="border-4 border-zinc-300 rounded-lg group overflow-hidden"
     >
       <div className="relative w-full h-72">
         <Image
@@ -20,11 +30,11 @@ export default function Product({ product, index }) {
           }}
         ></Image>
       </div>
-      <div className="p-6 bg-zinc-200">
+      <div className="p-6 bg-zinc-300">
         <p className="font-semibold text-lg">{product.name}</p>
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
-            <p className="text-gray-500">Price</p>
+            <p className="text-zinc-500 font-extrabold">Price</p>
             <p className="text-lg font-semibold">
               {formatCurrencyString({
                 currency: product.currency,
@@ -32,7 +42,10 @@ export default function Product({ product, index }) {
               })}
             </p>
           </div>
-          <button className="border border-zinc-700 rounded-lg py-1 px-1">
+          <button
+            onClick={addItemToCart}
+            className="bg-white text-zinc-500 font-extrabold rounded-md py-2 px-4"
+          >
             Add to cart
           </button>
         </div>
