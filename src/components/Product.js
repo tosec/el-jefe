@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { formatCurrencyString } from "use-shopping-cart";
 
 export default function Product({ product, index }) {
   return (
@@ -24,7 +25,12 @@ export default function Product({ product, index }) {
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
             <p className="text-gray-500">Price</p>
-            <p className="text-lg font-semibold">{product.price}</p>
+            <p className="text-lg font-semibold">
+              {formatCurrencyString({
+                currency: product.currency,
+                value: product.price,
+              })}
+            </p>
           </div>
           <button className="border border-zinc-700 rounded-lg py-1 px-1">
             Add to cart
