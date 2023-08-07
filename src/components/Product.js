@@ -16,9 +16,9 @@ export default function Product({ product, index }) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="border-4 border-zinc-300 rounded-lg group overflow-hidden"
+      className="border-2 border-zinc-300 rounded-lg group overflow-hidden shadow-md"
     >
-      <div className="relative w-full h-72">
+      <div className="relative w-full h-96">
         <Image
           priority={index === 0}
           src={product.image}
@@ -30,11 +30,11 @@ export default function Product({ product, index }) {
           }}
         ></Image>
       </div>
-      <div className="p-6 bg-zinc-300">
+      <div className="p-6 bg-zinc-200">
         <p className="font-semibold text-lg">{product.name}</p>
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
-            <p className="text-zinc-500 font-extrabold">Price</p>
+            <p className="text-zinc-500 font-semibold">Price</p>
             <p className="text-lg font-semibold">
               {formatCurrencyString({
                 currency: product.currency,
@@ -44,7 +44,7 @@ export default function Product({ product, index }) {
           </div>
           <button
             onClick={addItemToCart}
-            className="bg-white text-zinc-500 font-extrabold rounded-md py-2 px-4"
+            className="bg-white hover:bg-zinc-300 text-zinc-500 font-semibold rounded-md py-2 px-4"
           >
             Add to cart
           </button>
