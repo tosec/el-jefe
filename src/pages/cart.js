@@ -46,8 +46,10 @@ export default function Cart() {
     <div className="container x;:max-w-screen-xl mx-auto py-16 px-8">
       {cartCount > 0 ? (
         <>
-          <h2 className="text-3xl font-semibold">Your Shopping cart</h2>
-          <p className="mt-1 text-xl">
+          <h2 className="sm:text-3xl text-2xl font-semibold">
+            Your Shopping cart
+          </h2>
+          <p className="mt-1 sm:text-xl text-md">
             {cartCount} items{" "}
             <button
               onClick={() => clearCart()}
@@ -60,7 +62,7 @@ export default function Cart() {
       ) : (
         <>
           {" "}
-          <h2 className=" text-center text-3xl font-semibold">
+          <h2 className="text-center text-3xl font-semibold">
             Looks like your cart is feeling lonely...
           </h2>
           <p className="text-center mt-1 text-xl">
