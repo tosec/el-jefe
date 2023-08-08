@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function Meta() {
   return (
     <Head>
-      <title>Micheladas</title>
+      <title>Store</title>
     </Head>
   );
 }
