@@ -7,8 +7,8 @@ export default function Navbar() {
   const { formattedTotalPrice, cartCount } = useShoppingCart();
 
   return (
-    <header className="sticky top-0 bg-zinc-300 z-10">
-      <div className="container mx-auto p-6 flex justify-between">
+    <header className="sticky top-0 py-2 bg-zinc-300 z-10">
+      <div className="container mx-auto flex justify-between px-2">
         <Logo />
         <Link
           href="/cart"
