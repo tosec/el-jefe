@@ -1,9 +1,23 @@
+import axios from "axios";
+import { useRouter } from "next/router";
 import { RotateLoader } from "react-spinners";
+import useSWR from "swr";
+import { useShoppingCart } from "use-shopping-cart";
 
 export default function SuccessPage() {
-  const data = false;
-  const error = false;
-
+  const { clearCart } = useShoppingCart();
+  const router = useRouter();
+  const sessionId = router.query.session_id;
+  const { data, error } = useSWR(
+    () => (sessionId ? `/api/checkout-sessions/${sessionId}` : null),
+    (url) => axios.get(url).then((res) => res.data),
+    {
+      onSuccess() {
+        clearCart();
+      },
+    }
+  );
+  const email = data?.customer_details?.email;
   return (
     <div className="container xl:max-w-screen-xl mx-auto text-center">
       {error ? ( // error state
@@ -23,7 +37,9 @@ export default function SuccessPage() {
             <h2 className="text-4xl font-semibold flex flex-col items-center space-x-1">
               Order succeeded!
             </h2>
-            <p className="text-lg">Check your email to see order details.</p>
+            <p className="text-lg">
+              Check your email ({email}) to see order details.
+            </p>
           </div>
         </div>
       )}
