@@ -2,10 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   MinusSmallIcon,
-  PauseIcon,
   PlusSmallIcon,
   XCircleIcon,
-  XMarkIcon,
 } from "@heroicons/react/24/solid";
 import { useShoppingCart } from "use-shopping-cart";
 

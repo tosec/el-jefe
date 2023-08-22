@@ -1,28 +1,57 @@
+import { useState } from "react";
 import Link from "next/link";
-import { ShoppingCartIcon } from "@heroicons/react/24/solid";
-import Logo from "./Logo";
 import { useShoppingCart } from "use-shopping-cart";
+import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
+import { CiBeerMugFull } from "react-icons/ci";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export default function Navbar() {
-  const { formattedTotalPrice, cartCount } = useShoppingCart();
+  const { cartCount } = useShoppingCart();
+  let [open, setOpen] = useState(false);
+
+  let Links = [
+    { name: "HOME", link: "/" },
+    { name: "SHOP", link: "/shop" },
+    { name: "ABOUT US", link: "/about" },
+    { name: "CONTACT", link: "/contact" },
+  ];
 
   return (
-    <header className="sticky top-0 py-2 bg-zinc-300 z-10">
-      <div className="container mx-auto flex justify-between px-2">
-        <Logo />
-        <Link
-          href="/cart"
-          className="flex items-center space-x-1 text-zinc-500 hover:text-zinc-600"
+    <div className=" w-full fixed top-0 left-0 z-50">
+      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
+        <div className="font-bold text-2xl flex items-center gap-3">
+          <CiBeerMugFull className="w-10 h-10 text-lime-600 tracking-widest" />
+        </div>
+        <div
+          onClick={() => setOpen(!open)}
+          className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7"
         >
-          <div className="relative">
-            <ShoppingCartIcon className="w-7 h-7 flex-shrink-0" />
+          {open ? <XMarkIcon /> : <Bars3BottomRightIcon />}
+        </div>
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-300 ease-in ${
+            open ? "top-13" : "top-[-490px]"
+          }`}
+        >
+          {Links.map((link, index) => (
+            <li key={index} className="md:ml-12 md:my-0 my-7 font-semibold">
+              <Link
+                href={link.link}
+                className="hover:text-lime-600 duration-300"
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+
+          <div className="text-lg text-lime-600 md:ml-8 font-semibold py-1 duration-300 md:static">
+            <Link href="/cart" className="flex items-center">
+              <AiOutlineShoppingCart className="mr-2 w-8 h-8" />{" "}
+              <span className="flex items-center">({cartCount})</span>
+            </Link>
           </div>
-          <p className="text-lg">
-            {formattedTotalPrice}{" "}
-            <span className="text-md text-zinc-400">({cartCount})</span>
-          </p>
-        </Link>
+        </ul>
       </div>
-    </header>
+    </div>
   );
 }

@@ -16,7 +16,7 @@ export default function Product({ product, index }) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="border-2 border-zinc-300 rounded-lg group overflow-hidden shadow-md"
+      className="rounded-lg group overflow-hidden shadow-md"
     >
       <div className="relative w-full h-96">
         <Image
@@ -30,7 +30,7 @@ export default function Product({ product, index }) {
           }}
         ></Image>
       </div>
-      <div className="p-6 bg-zinc-200">
+      <div className="p-6">
         <p className="font-semibold text-lg">{product.name}</p>
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
@@ -44,7 +44,7 @@ export default function Product({ product, index }) {
           </div>
           <button
             onClick={addItemToCart}
-            className="bg-white hover:bg-zinc-300 text-zinc-500 font-semibold rounded-md py-2 px-4"
+            className="bg-lime-500 font-semibold rounded-md py-2 px-4"
           >
             Add to cart
           </button>
