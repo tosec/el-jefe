@@ -23,7 +23,7 @@ export default function Carousel() {
   };
 
   return (
-    <div className="max-w-[1400px] h-[780px] mx-auto mt-10 py-16 relative group">
+    <div className="max-w-[1400px] h-[780px] mx-auto mt-16 py-16 relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500 shadow-lg"

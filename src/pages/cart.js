@@ -43,7 +43,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="container x;:max-w-screen-xl mx-auto py-16 px-8">
+    <div className="container :max-w-screen-xl mx-auto py-16 px-8">
       {cartCount > 0 ? (
         <>
           <h2 className="sm:text-3xl text-2xl font-semibold">
@@ -62,7 +62,7 @@ export default function Cart() {
       ) : (
         <>
           {" "}
-          <h2 className="text-center text-3xl font-semibold">
+          <h2 className="text-center text-3xl font-semibold mt-16">
             Looks like your cart is feeling lonely...
           </h2>
           <p className="text-center mt-1 text-xl">

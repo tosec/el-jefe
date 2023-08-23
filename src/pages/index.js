@@ -4,7 +4,6 @@ export default function index() {
   return (
     <div>
       <Carousel />
-      <Carousel />
     </div>
   );
 }
