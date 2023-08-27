@@ -2,9 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useShoppingCart } from "use-shopping-cart";
 import { Bars3BottomRightIcon, XMarkIcon } from "@heroicons/react/24/solid";
-import { CiBeerMugFull } from "react-icons/ci";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import Image from "next/image";
 import Logo from "./Logo";
 
 export default function Navbar() {

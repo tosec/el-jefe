@@ -67,8 +67,8 @@ export default function Cart() {
           </h2>
           <p className="text-center mt-1 text-xl">
             Browse our collection{" "}
-            <Link href="/shop" className=" text-orange-400">
-              here!
+            <Link href="/shop" className=" text-lime-500 font-semibold">
+              here
             </Link>
           </p>
         </>

@@ -18,7 +18,7 @@ export default function Product({ product, index }) {
       href={`/products/${product.id}`}
       className="rounded-lg group overflow-hidden shadow-md"
     >
-      <div className="relative w-full h-96">
+      <div className="relative w-full h-96 mt-20">
         <Image
           priority={index === 0}
           src={product.image}
@@ -30,7 +30,7 @@ export default function Product({ product, index }) {
           }}
         ></Image>
       </div>
-      <div className="p-6">
+      <div className="p-6 h-96">
         <p className="font-semibold text-lg">{product.name}</p>
         <div className="mt-4 flex items-center justify-between space-x-2">
           <div>
