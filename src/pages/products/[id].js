@@ -17,7 +17,7 @@ export default function ProductDetails({ product }) {
   }
 
   return (
-    <div className="container lg:max-w-screen-lg mx-auto py-12 px-">
+    <div className="container lg:max-w-screen-lg mx-auto py-12 mt-40">
       <div className="flex flex-col md:flex-row justify-between items-center space-y-10 md:space-y-0 md:space-x-12">
         <div className="relative w-80 h-80 sm:2-96 sm:h-96 mr-32">
           <Image
@@ -29,20 +29,21 @@ export default function ProductDetails({ product }) {
             priority
           />
         </div>
-        <div className="w-full flex-1 mx-w-md rounded-md shadow-lg p-6 bg-white">
+        <div className="w-full flex-1 mx-w-md rounded-md p-6 bg-white">
           <h2 className="text-3xl font-semibold">{product.name}</h2>
-          <div className="mt-4 pt-4">
+          <div className="mt-6 pt-6">
             <p className="text-zinc-500">Price: </p>
-            <p className="text-xl font-semibold">
+            <p className="text-xl">
               {formatCurrencyString({
                 value: product.price,
                 currency: product.currency,
               })}
             </p>
+            <p className="text-zinc-500 mt-4">Description: </p>
+            <p className="text-md">{product.description}</p>
           </div>
           <div className="mt-4 pt-4">
-            <p className="text-zinc-500">Quantity:</p>
-            <div className="mt-1 flex items-center space-x-3">
+            <div className="mt-1 flex items-center justify-center space-x-3">
               <button
                 disabled={count <= 1}
                 onClick={() => setCount(count - 1)}
@@ -61,7 +62,7 @@ export default function ProductDetails({ product }) {
           </div>
           <button
             onClick={addItemToCart}
-            className="w-full mt-4 border border-lime-500 py-2 px-6 bg-lime-500 hover:bg-lime-600 hover:border-lime-600 focus:ring-4 focus:ring-opacity-50 focus:ring-line-500 text-white disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
+            className="w-full mt-4 py-2 px-6 bg-red-700 text-white font-semibold disabled:opacity-50 disabled:cursor-not-allowed rounded-md"
           >
             Add to Cart
           </button>
@@ -95,6 +96,7 @@ export async function getStaticProps({ params }) {
       name: product.name,
       price: price.unit_amount,
       image: product.images[0],
+      description: product.description,
     };
   });
   const product = products.find((product) => product.id === params.id);

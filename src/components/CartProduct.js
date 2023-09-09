@@ -10,7 +10,7 @@ import { useShoppingCart } from "use-shopping-cart";
 export default function CartProduct({ product }) {
   const { setItemQuantity, removeItem } = useShoppingCart();
   return (
-    <div className="flex justify-between sm:space-x-4 rounded-md sm:p-4 p-2 bg-zinc-300 bg-opacity-50 hover:bg-opacity-100 hover:shadow-lg ">
+    <div className="flex justify-between sm:space-x-4 rounded-md sm:p-4 p-2 bg-opacity-50 ">
       <Link
         href={`/products/${product.id}`}
         className="flex items-center sm:space-x-4 space-x-2 group"

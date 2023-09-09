@@ -2,13 +2,28 @@ import Product from "src/components/Product";
 import { stripe } from "../../lib/stripe";
 
 export default function Shop({ products }) {
-  console.log(products);
   return (
-    <div className="container xl:max-w-screen-xl mx-auto py-12 px-6">
-      <div className="grid gap-8 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
-        {products.map((product, index) => (
-          <Product key={product.id} product={product} index={index} />
-        ))}
+    <div className="mt-32">
+      <div class="max-w-2xl mx-auto md:px-6">
+        <div class="md:py-20 py-18">
+          <div class="md:pb-20 pb-12 max-w-3xl mx-auto text-center ">
+            <h2 class="md:text-5xl text-4xl text-black font-bold mb-4">
+              Michelada Mixes
+            </h2>
+            <p class="lg:text-2xl md:text-xl sm:text-xl text-lg text-gray-600 dark:text-gray-400">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
+              cupidatat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="container xl:max-w-screen-xl mx-auto py-12 px-3 mb-6">
+        <div className="grid gap-10 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
+          {products.map((product, index) => (
+            <Product key={product.id} product={product} index={index} />
+          ))}
+        </div>
       </div>
     </div>
   );

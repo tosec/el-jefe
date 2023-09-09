@@ -43,14 +43,14 @@ export default function Navbar() {
                 <Link
                   onClick={() => setOpen(!open)}
                   href={link.link}
-                  className="hover:text-red-900 duration-300"
+                  className="hover:text-red-800 duration-300"
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
 
-            <div className="text-lg text-red-900 font-semibold py-1 duration-300 md:static flex justify-center md:ml-8 md:mr-8">
+            <div className="text-lg text-red-800 font-semibold py-1 duration-300 md:static flex justify-center md:ml-8 md:mr-8">
               <Link
                 onClick={() => setOpen(!open)}
                 href="/cart"

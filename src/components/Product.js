@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { formatCurrencyString, useShoppingCart } from "use-shopping-cart";
 import { toast } from "react-hot-toast";
 
@@ -16,37 +15,40 @@ export default function Product({ product, index }) {
   return (
     <Link
       href={`/products/${product.id}`}
-      className="rounded-lg group overflow-hidden shadow-md"
+      className="group block overflow-hidden"
     >
-      <div className="relative w-full h-96 mt-20">
-        <Image
-          priority={index === 0}
-          src={product.image}
-          alt={product.name}
-          fill
-          sizes="100%"
-          style={{
-            objectFit: "contain",
-          }}
-        ></Image>
+      <div className="relative h-[350px] sm:h-[450px]">
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fwww.chicanoeats.com%2Fwp-content%2Fuploads%2F2019%2F05%2FIMG_9275-819x1024.jpg%3Fresize%3D819%252C1024&f=1&nofb=1&ipt=aca1c2d578275c4dd38cddc186047f84a139a096cd242874aed6a47c48bf9a10&ipo=images"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
+        />
+
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fwww.chicanoeats.com%2Fwp-content%2Fuploads%2F2019%2F05%2FIMG_9275-819x1024.jpg%3Fresize%3D819%252C1024&f=1&nofb=1&ipt=aca1c2d578275c4dd38cddc186047f84a139a096cd242874aed6a47c48bf9a10&ipo=images"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
+        />
       </div>
-      <div className="p-6 h-96">
-        <p className="font-semibold text-lg">{product.name}</p>
-        <div className="mt-4 flex items-center justify-between space-x-2">
-          <div>
-            <p className="text-zinc-500 font-semibold">Price</p>
-            <p className="text-lg font-semibold">
-              {formatCurrencyString({
-                currency: product.currency,
-                value: product.price,
-              })}
-            </p>
-          </div>
+
+      <div className="relative bg-white pt-3">
+        <h3 className="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+          {product.name}
+        </h3>
+
+        <div className="mt-1.5 flex items-center justify-between text-gray-900">
+          <p className="tracking-wide">
+            {formatCurrencyString({
+              currency: product.currency,
+              value: product.price,
+            })}
+          </p>
+
           <button
             onClick={addItemToCart}
-            className="bg-lime-500 font-semibold rounded-md py-2 px-4"
+            className="text-xs uppercase tracking-wide hover:text-gray-500"
           >
-            Add to cart
+            add to cart
           </button>
         </div>
       </div>

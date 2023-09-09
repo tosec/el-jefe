@@ -40,7 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <section className=" mt-20">
+    <section className=" mt-32">
       {isSuccess && (
         <div className="fixed bottom-20 right-10 w-500 z-50 bg-green-500 text-white p-4 text-center rounded-md animate-bounce">
           <strong className="font-bold text-lg">Success!</strong>
@@ -59,11 +59,11 @@ export default function Contact() {
           </span>
         </div>
       )}
-      <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
+      <div className="md:py-20 lg:py-18 px-4 mx-auto max-w-screen-md">
+        <h2 className="md:text-5xl text-4xl font-bold text-center text-gray-900 mb-4">
           Contact Us
         </h2>
-        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 sm:text-xl">
+        <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 lg:text-2xl md:text-xl sm:text-xl text-lg">
           Need a helping hand with our irresistible Michelada Mix? Got thoughts
           to share about our websites features? We're all ears and ready to
           assist!
@@ -80,7 +80,7 @@ export default function Contact() {
               type="email"
               id="user_email"
               name="user_email"
-              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+              className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 lg:text-md text-sm rounded-lg block w-full p-4"
               placeholder="name@domain.com"
               required
             />
@@ -96,7 +96,7 @@ export default function Contact() {
               type="text"
               id="subject"
               name="subject"
-              className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
+              className="block p-4 w-full lg:text-md text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm"
               placeholder="Let us know how we can help you"
               required
             />
@@ -112,13 +112,13 @@ export default function Contact() {
               id="message"
               name="message"
               rows="6"
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300"
+              className="block p-2.5 w-full lg:text-md text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300"
               placeholder="Leave a comment..."
             ></textarea>
           </div>
           <button
             type="submit"
-            className="py-3 px-5 text-md font-medium text-center justify-center text-white bg-red-800 rounded-lg bg-primary-700 sm:w-fit focus:outline-none focus:shadow-outline transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg hover:text-white"
+            className="py-3 px-5 text-md font-medium text-center justify-center text-white bg-red-800 rounded-lg sm:w-fit"
           >
             Send message
           </button>

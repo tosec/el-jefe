@@ -43,7 +43,7 @@ export default function Cart() {
   }
 
   return (
-    <div className="container :max-w-screen-xl mx-auto py-16 px-8">
+    <div className="container :max-w-screen-xl mx-auto py-16 px-8 mt-32">
       {cartCount > 0 ? (
         <>
           <h2 className="sm:text-3xl text-2xl font-semibold">
@@ -62,10 +62,10 @@ export default function Cart() {
       ) : (
         <>
           {" "}
-          <h2 className="text-center text-3xl font-semibold mt-16">
+          <h2 className="text-center lg:text-4xl md:text-3xl sm:text-2xl text-2xl font-semibold mt-10">
             Looks like your cart is feeling lonely...
           </h2>
-          <p className="text-center mt-1 text-xl">
+          <p className="text-center mt-1 lg:text3xl md:text-2xl sm:text-xl">
             Browse our collection{" "}
             <Link href="/shop" className=" text-lime-500 font-semibold">
               here
@@ -87,7 +87,7 @@ export default function Cart() {
             <button
               disabled={isRedirecting}
               onClick={onCheckout}
-              className="border rounded-md py-2 px-6 bg-zinc-400 hover:bg-zinc-500 text-white mt-4 max-w-max"
+              className="border rounded-md py-2 px-6 bg-[hsl(94,41%,62%)] text-white mt-4 max-w-max"
             >
               {isRedirecting ? "Redirecting..." : "Checkout"}
             </button>

@@ -13,7 +13,7 @@ export default function AppLayout({ children }) {
     <div className={`${inter.variable} font-sans min-h-screen flex flex-col`}>
       <Meta />
       <Navbar />
-      <main className="flex-grow bg-gray-50">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );
