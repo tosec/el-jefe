@@ -21,22 +21,19 @@ export default function SuccessPage() {
   return (
     <div className="container xl:max-w-screen-xl mx-auto text-center">
       {error ? ( // error state
-        <div className="grid h-screen px-4 bg-white place-content-center">
-          <div className="text-center">
-            <h1 className="font-black text-gray-200 text-9xl">404</h1>
-
-            <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Uh-oh!
-            </p>
-
-            <p className="mt-4 text-gray-500">We can't find that page.</p>
-
-            <a
-              href="#"
-              className="inline-block px-5 py-3 mt-6 text-sm font-medium text-white bg-indigo-600 rounded hover:bg-indigo-700 focus:outline-none focus:ring"
-            >
-              Go Back Home
-            </a>
+        <div className="grid h-screen px-4 place-content-center">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center">
+              <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl">
+                500
+              </h1>
+              <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
+                Internal Server Error
+              </p>
+              <p class="mb-4 text-lg font-light text-gray-500">
+                We are already working to solve the problem
+              </p>
+            </div>
           </div>
         </div>
       ) : !data ? ( // loading state
@@ -45,14 +42,22 @@ export default function SuccessPage() {
         </div>
       ) : (
         // success state
-        <div className="py-12 px-6">
-          <div className="py-4 px-8 space-y-4 rounded-md mx-w-lg mx-auto">
-            <h2 className="text-4xl font-semibold flex flex-col items-center space-x-1">
-              Order succeeded!
-            </h2>
-            <p className="text-lg">
-              Check your email ({email}) to see order details.
-            </p>
+        <div className="grid h-screen px-4 place-content-center">
+          <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center">
+              <h1 class="mb-4 text-7xl tracking-tight font-extrabold lg:text-9xl text-red-700">
+                Success!
+              </h1>
+              <p class="mb-4 text-3xl tracking-tight font-bold text-gray-900 md:text-4xl">
+                Thank you for your purchase!
+              </p>
+              <p class="mb-4 text-lg font-light text-gray-500">
+                An invoice as been sent to{" "}
+                <span className="underline cursor-pointer font-semibold">
+                  {email}
+                </span>
+              </p>
+            </div>
           </div>
         </div>
       )}

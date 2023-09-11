@@ -8,13 +8,8 @@ export default function Shop({ products }) {
         <div class="md:py-20 py-18">
           <div class="md:pb-20 pb-12 max-w-3xl mx-auto text-center ">
             <h2 class="md:text-5xl text-4xl text-black font-bold mb-4">
-              Michelada Mixes
+              Micheladas
             </h2>
-            <p class="lg:text-2xl md:text-xl sm:text-xl text-lg text-gray-600 dark:text-gray-400">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
-              cupidatat.
-            </p>
           </div>
         </div>
       </div>

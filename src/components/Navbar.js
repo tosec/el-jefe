@@ -18,7 +18,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full fixed top-0 left-0 z-50">
-      <div className="md:flex items-center justify-between bg-white py-4">
+      <div className="md:flex items-center justify-between bg-gray-50 py-4">
         <div className="flex items-center">
           <Logo />
         </div>
@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
 
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white left-0 w-full md:w-auto md:pl-0 transition-all duration-300 ease-in ${
+          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-gray-50 left-0 w-full md:w-auto md:pl-0 transition-all duration-300 ease-in ${
             open ? "top-13" : "top-[-490px]"
           }`}
         >
@@ -43,14 +43,14 @@ export default function Navbar() {
                 <Link
                   onClick={() => setOpen(!open)}
                   href={link.link}
-                  className="hover:text-red-800 duration-300"
+                  className="hover:text-red-700 duration-300"
                 >
                   {link.name}
                 </Link>
               </li>
             ))}
 
-            <div className="text-lg text-red-800 font-semibold py-1 duration-300 md:static flex justify-center md:ml-8 md:mr-8">
+            <div className="text-lg text-red-700 font-semibold py-1 duration-300 md:static flex justify-center md:ml-8 md:mr-8">
               <Link
                 onClick={() => setOpen(!open)}
                 href="/cart"
