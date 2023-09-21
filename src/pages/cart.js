@@ -46,14 +46,14 @@ export default function Cart() {
     <div className="container :max-w-screen-xl mx-auto py-16 px-8 mt-32">
       {cartCount > 0 ? (
         <>
-          <h2 className="sm:text-3xl text-2xl font-semibold">
+          <h2 className="sm:text-4xl text-3xl font-semibold">
             Your Shopping cart
           </h2>
           <p className="mt-1 sm:text-xl text-md">
             {cartCount} items{" "}
             <button
               onClick={() => clearCart()}
-              className="opacity-50 hover:opacity-100 text-base capitalize"
+              className="opacity-50 hover:opacity-100 capitalize"
             >
               (Remove all items)
             </button>
@@ -67,7 +67,7 @@ export default function Cart() {
           </h2>
           <p className="text-center mt-1 lg:text3xl md:text-2xl sm:text-xl">
             Browse our collection{" "}
-            <Link href="/shop" className=" text-lime-500 font-semibold">
+            <Link href="/shop" className=" text-red-700 font-semibold">
               here
             </Link>
           </p>
@@ -87,7 +87,7 @@ export default function Cart() {
             <button
               disabled={isRedirecting}
               onClick={onCheckout}
-              className="border rounded-md py-2 px-6 bg-[hsl(94,41%,62%)] text-white mt-4 max-w-max"
+              className="border rounded-md py-2 px-6 bg-red-700 text-white mt-4 max-w-max"
             >
               {isRedirecting ? "Redirecting..." : "Checkout"}
             </button>

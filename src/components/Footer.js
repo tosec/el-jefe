@@ -4,7 +4,7 @@ import { ImFacebook2 } from "react-icons/im";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center font-semibold bg-gray-50">
+    <footer className="flex flex-col justify-center items-center font-semibold bg-gray-50 mt-40">
       <div className="flex items-center space-x-4 mb-2 mt-2">
         <a
           href="https://www.facebook.com/your-facebook-page-url"

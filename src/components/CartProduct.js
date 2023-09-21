@@ -32,14 +32,14 @@ export default function CartProduct({ product }) {
           <button
             onClick={() => setItemQuantity(product.id, product.quantity - 1)}
             disabled={product.quantity <= 1}
-            className="sm:p-1 rounded-md hover:bg-rose-100 hover:text-rose-500"
+            className="sm:p-1 rounded-full bg-rose-100 text-rose-500"
           >
             <MinusSmallIcon className="sm:w-6 sm:h-6 w-4 h-4 flex-shrink-0" />
           </button>
           <p className="font-semibold sm:text-xl text-sm">{product.quantity}</p>
           <button
             onClick={() => setItemQuantity(product.id, product.quantity + 1)}
-            className="sm:p-1 rounded-md hover:bg-green-100 hover:text-green-500"
+            className="sm:p-1 rounded-full bg-green-100 text-green-500"
           >
             <PlusSmallIcon className="sm:w-6 sm:h-6 w-4 h-4 flex-shrink-0" />
           </button>

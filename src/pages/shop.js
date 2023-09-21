@@ -13,7 +13,7 @@ export default function Shop({ products }) {
           </div>
         </div>
       </div>
-      <div className="container xl:max-w-screen-xl mx-auto px-3 mb-20">
+      <div className="container xl:max-w-screen-xl mx-auto px-3">
         <div className="grid gap-10 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1">
           {products.map((product, index) => (
             <Product key={product.id} product={product} index={index} />

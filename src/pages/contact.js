@@ -40,9 +40,9 @@ export default function Contact() {
   };
 
   return (
-    <section className=" mt-32">
+    <section className=" mt-52">
       {isSuccess && (
-        <div className="fixed bottom-20 right-10 w-500 z-50 bg-green-500 text-white p-4 text-center rounded-md animate-bounce">
+        <div className="fixed bottom-20 right-10 w-500 z-50 bg-green-500 text-white p-4 text-center rounded-md">
           <strong className="font-bold text-lg">Success!</strong>
           <span className="block sm:inline text-md">
             {" "}
@@ -59,7 +59,7 @@ export default function Contact() {
           </span>
         </div>
       )}
-      <div className="md:py-20 lg:py-18 px-4 mb-20 mx-auto max-w-screen-md">
+      <div className="px-4 mx-auto max-w-screen-md">
         <h2 className="md:text-5xl text-4xl font-bold text-center text-gray-900 mb-4">
           Contact Us
         </h2>
